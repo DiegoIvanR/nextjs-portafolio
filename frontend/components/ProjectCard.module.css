@@ -1,0 +1,108 @@
+.card {
+  background: #0a192f;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  border: 1px solid;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+/*
+.card:hover {
+  border-radius: 0.75rem;
+  border: 1px solid #64ffda;
+}*/
+.imageWrapper {
+  position: relative;
+  height: 16rem;
+  width: 100%;
+  background-color: #e5e7eb;
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: #8c8c9c;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-bottom: 1rem;
+  flex: 1;
+  /* Line clamp effect */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ... tus estilos anteriores ... */
+
+.footer {
+  margin-top: auto; /* Empuja los links al fondo si la tarjeta es alta */
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between; /* Iconos a la izq, Demo a la der */
+  align-items: center;
+  border-top: 1px solid #64ffda; /* Una línea sutil para separar */
+}
+
+.icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.iconLink {
+  color: #8c8c9c;
+  transition: transform 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.iconLink:hover {
+  transform: translateY(-2px); /* Efecto de "saltito" al pasar el mouse */
+}
+
+/* Colores específicos al pasar el mouse */
+.figma:hover {
+  color: #64ffda;
+}
+.github:hover {
+  color: #64ffda;
+}
+
+.demoLink {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #64ffda; /* Azul Next.js o el color que prefieras */
+  text-decoration: none;
+  /* background-color: #f0f7ff; */
+  border-color: #64ffda;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.demoLink:hover {
+  background-color: #64ffda;
+  color: #0a192f;
+}

@@ -1,0 +1,67 @@
+.container {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* === ACTIVE LAYERS === */
+.activeLayer {
+  /* dasharray: 120px visible line, 1200px invisible gap.
+       This ensures only one "pulse" is visible per line segment at a time.
+    */
+  stroke-dasharray: 120 1200;
+  stroke-dashoffset: 120; /* Start hidden (offset by the length of the dash) */
+
+  /* 3s total cycle, aligns with the delays in the TSX */
+  animation: fireLayer 6s ease-in-out infinite;
+
+  will-change: stroke-dashoffset;
+}
+
+@keyframes fireLayer {
+  0% {
+    /* Hidden state */
+    stroke-dashoffset: 120;
+    opacity: 0;
+  }
+  5% {
+    /* Fade in quickly */
+    opacity: 1;
+  }
+  40% {
+    /* Move the dash across the screen (negative offset pulls it forward) */
+    stroke-dashoffset: -1200;
+    opacity: 0;
+  }
+  100% {
+    /* Stay hidden for the rest of the cycle while other layers fire */
+    stroke-dashoffset: -1200;
+    opacity: 0;
+  }
+}
+
+/* === NODES === */
+.node {
+  animation: breathe 6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 6px rgba(39, 177, 115, 0.6));
+  }
+}

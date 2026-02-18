@@ -6,8 +6,12 @@ import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import { ProjectCard } from "./ProjectCard";
 import styles from "@/app/page.module.css";
 import skeletonStyles from "./ProjectSkeleton.module.css";
+import { Project } from "../models/project";
+interface ProjectTabsProps {
+  initialProjects: Project[];
+}
 
-export default function ProjectTabs({ initialProjects }) {
+export default function ProjectTabs({ initialProjects }: ProjectTabsProps) {
   // Use the data passed from the server
   const [projects] = useState(initialProjects || []);
 

@@ -1,8 +1,7 @@
 import { transformProject, Project } from "../models/project";
 
 const API_URL =
-  "http://strapi-portafolio-production.up.railway.app/api/projects?populate=*";
-
+  "https://strapi-portafolio-production.up.railway.app/api/projects?populate=*";
 export async function getProjects(): Promise<Project[]> {
   const res = await fetch(API_URL, { cache: "no-store" });
 

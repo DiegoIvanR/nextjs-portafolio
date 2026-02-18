@@ -31,24 +31,26 @@
 }
 
 .doubleColumn {
-  padding-top: 5rem;
-  height: 100%;
-  padding: 5rem 0;
+  padding: 2rem 0; /* Reduced padding for mobile */
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column; /* Stack vertically by default */
   align-items: center;
+  gap: 3rem; /* Add space between text and SVG when stacked */
 }
+
+.header {
+  width: 100%; /* Take full width on mobile */
+  text-align: center; /* Center text on mobile */
+}
+
 .svgContainer {
-  width: 40%;
-  height: 100%;
-  position: relative;
-  bottom: 0;
+  width: 80%; /* Larger relative size on mobile */
+  max-width: 300px; /* Prevent it from getting too huge */
 }
+
 .aboutMe {
-  position: relative;
-  top: 2rem;
-  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem; /* Slightly smaller for mobile readability */
   color: #e5e7eb;
 }
 .grid {
@@ -149,5 +151,28 @@
 @media (min-width: 1024px) {
   .embla__slide {
     flex: 0 0 45%;
+  }
+}
+@media (min-width: 768px) {
+  .doubleColumn {
+    flex-direction: row; /* Side-by-side on desktop */
+    justify-content: space-between;
+    padding: 5rem 0;
+    gap: 0;
+  }
+
+  .header {
+    width: 50%;
+    text-align: left; /* Align left for desktop */
+  }
+
+  .svgContainer {
+    width: 40%;
+    max-width: none;
+  }
+
+  .aboutMe {
+    top: 2rem; /* Keep your original positioning */
+    position: relative;
   }
 }
